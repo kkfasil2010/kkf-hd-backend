@@ -4,6 +4,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
+app.use(express.static('public'));
+
 // Import Routes
 const indexRoute = require('./routes/indexRoute');
 const whatsappRoute = require('./routes/whatsappRoute');
