@@ -57,8 +57,9 @@ exports.createDeliveryJob = (req, res) => {
     });
 
     const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID || '';
+    const businessPhone = process.env.WHATSAPP_BUSINESS_PHONE_NUMBER || '15552006793';
     const prefilledText = `*Please CLICK SEND to get your HD Video!*\n\n${uuid}`;
-    const clickToSendUrl = `https://wa.me/${phoneId}?text=${encodeURIComponent(prefilledText)}`;
+    const clickToSendUrl = `https://wa.me/${businessPhone}?text=${encodeURIComponent(prefilledText)}`;
 
     return res.status(200).json({
       success: true,
